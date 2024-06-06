@@ -4,6 +4,6 @@ import { database } from '../store/exampleStore';
 
 
 export default function ViewCounter() {
-    const $isFalse=useStore(database);
-  return $isFalse ? <h1>hola nanostore</h1> : <span>react</span>;
+    const $data=useStore(database);
+  return $data ? <><h1>hola mundo</h1><button onClick={()=>database.set(!$data)}>Change State</button></> : <span>react</span>;
 }
