@@ -1,6 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Counter from '../components/Counter';
+import ViewCounter from '../components/ViewCounter'
+
+const someProps={
+	count:0
+}
+
 ---
 
 <Layout title="Welcome to Astro.">
@@ -38,6 +45,11 @@ import Card from '../components/Card.astro';
 			Manual de inicio para aprender sobre el desarrollo de una granja,
 			sus beneficios y responsabilidades que tendrás si deseas crear una.
 		</p>
+		<Counter {...someProps} client:visible>
+			<h1>react </h1>
+		</Counter>
+
+		<ViewCounter client:visible/>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
